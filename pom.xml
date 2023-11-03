@@ -4,7 +4,7 @@
 
   <groupId>org.jetbrains.kotlinx</groupId>
   <artifactId>ki</artifactId>
-  <version>0.5.2-SNAPSHOT</version>
+  <version>0.5.2-KK1</version>
 
   <packaging>pom</packaging>
   <name>Ki Shell :: parent</name>
@@ -13,8 +13,9 @@
     <module>ki-shell</module>
   </modules>
   <properties>
-    <kotlin.version>1.7.0</kotlin.version>
-    <jvm.version>11</jvm.version>
+    <kotlin.version>1.9.10</kotlin.version>
+    <jvm.version>17</jvm.version>
+    <dokka.version>1.9.10</dokka.version>
   </properties>
   <build>
     <plugins>
@@ -54,13 +55,13 @@
       <plugin>
         <groupId>org.jetbrains.dokka</groupId>
         <artifactId>dokka-maven-plugin</artifactId>
-        <version>${kotlin.version}</version>
+        <version>${dokka.version}</version>
         <configuration>
           <dokkaPlugins>
             <plugin>
               <groupId>org.jetbrains.dokka</groupId>
               <artifactId>kotlin-as-java-plugin</artifactId>
-              <version>${kotlin.version}</version>
+              <version>${dokka.version}</version>
             </plugin>
           </dokkaPlugins>
         </configuration>
@@ -150,7 +151,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.0.1</version>
+            <version>3.1.0</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
